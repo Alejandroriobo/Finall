@@ -26,7 +26,7 @@ const FormularioRegistro = () => {
     };
 
     await axios
-      .post("http://89.116.25.43:3500/api/usuarios/registrar", formData)
+      .post(/*"http://89.116.25.43:3500/api/usuarios/registrar"*/"http://localhost:3001/registrar", formData)
       .then((resp) => {
         console.log(resp);
         Swal.fire("Información!", "Creado Correctamente!", "success");
