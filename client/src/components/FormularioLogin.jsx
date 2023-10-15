@@ -9,12 +9,12 @@ import "../styles/Login.css";
 const FormularioLogin = () => {
   const MySwal = withReactContent(Swal);
   const [usuario, setUsuario] = useState("");
-  const [password, setPasword] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const inicioSesion = async (e) => {
     e.preventDefault();
-    console.log(" :", usuario);
+    console.log("Usuario:", usuario);
     console.log("Password:", password);
 
     const data = {
@@ -22,23 +22,23 @@ const FormularioLogin = () => {
       password: password,
     };
 
-    //Consumo de Servicio Login
+    // Consumo de Servicio Login
     await axios
-      .post("http://89.116.25.43:3500/api/login", data)
+      .post(/*"http://89.116.25.43:3500/api/login"*/"http://localhost:3001/login", data)
       .then((resp) => {
         console.log(resp);
         localStorage.setItem("token", resp.data.jwt);
         localStorage.setItem("user", resp.data.user);
-        localStorage.setItem("username", resp.data.user.usuario);
-        //Swal.fire("Información!", "Buen Trabajo!", "success");
+        localStorage.setItem("username",usuario);
+        // Swal.fire("Información!", "Buen Trabajo!", "success");
         navigate("/dashboard");
       })
       .catch((err) => {
         console.log(err);
-        if (err.response.status == 400 || err.response.status == 404) {
+        if (err.response && (err.response.status === 400 || err.response.status === 404)) {
           Swal.fire("Información!", err.response.data.message, "error");
         } else {
-          Swal.fire("Información!", "Ocurrio un error!", "error");
+          Swal.fire("Información!", "Ocurrió un error!", "error");
         }
       });
   };
@@ -67,12 +67,12 @@ const FormularioLogin = () => {
               />
             </div>
             <div className="form-group">
-                <input
+              <input
                 className="inputs"
                 type="password"
                 placeholder="Password"
                 onChange={(e) => {
-                  setPasword(e.target.value);
+                  setPassword(e.target.value);
                 }}
               />
             </div>
@@ -93,7 +93,7 @@ const FormularioLogin = () => {
       </div>
     </div>
   );
-
 };
 
 export default FormularioLogin;
+

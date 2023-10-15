@@ -24,7 +24,6 @@ const FormularioRegistro = () => {
       usuario: usuario,
       password: password,
     };
-
     await axios
       .post(/*"http://89.116.25.43:3500/api/usuarios/registrar"*/"http://localhost:3001/registrar", formData)
       .then((resp) => {
@@ -113,7 +112,7 @@ const FormularioRegistro = () => {
             <div className="button">
                 <button
                     type="button"
-                    class="btn btn-primary btn-sm"
+                    className="btn btn-primary btn-sm"
                     onClick={(e) => {
                     handleRegister(e);
                     }}
