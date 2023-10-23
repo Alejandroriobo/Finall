@@ -80,7 +80,7 @@ const FormularioRegistro = () => {
                 {/* <img className="icons" src={UserIcon} alt="user" /> */}
                 <input
                 className="inputs"
-                type="text"
+                type="email"
                 placeholder="Email"
                 onChange={(e) => {
                     setEmail(e.target.value);
