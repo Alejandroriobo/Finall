@@ -192,3 +192,11 @@ footer {
   margin-top: 20px;
   color: #666;
 }
+
+.main-content{
+  height: 50%;
+  width: 70%;
+}
+.todo{
+  margin-top: -300px;
+}

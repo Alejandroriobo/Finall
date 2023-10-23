@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "../styles/Login.css";
-import Logo from "../assets/Captura de pantalla 2023-08-02 221459.png";
+import Logo from "../assets/Captura de pantalla 2023-08-02 221459.png"
 
 
 const FormularioRegistro = () => {
@@ -25,7 +25,7 @@ const FormularioRegistro = () => {
       password: password,
     };
     await axios
-      .post(/*"http://89.116.25.43:3500/api/usuarios/registrar"*/"http://localhost:3001/registrar", formData)
+      .post(/*"http://89.116.25.43:3500/api/usuarios/registrar"*/"http://localhost:3001/api/registrar", formData)
       .then((resp) => {
         console.log(resp);
         Swal.fire("Información!", "Creado Correctamente!", "success");
