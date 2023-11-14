@@ -50,7 +50,7 @@ const Publicaciones = () => {
       <h1>Publicaciones</h1>
       <ul>
         {publicaciones.map((publicacion) => (
-          <li key={publicacion._id}>
+          <li className='marc' key={publicacion._id}>
             <p>Usuario: {publicacion.usuario}</p>
             <p>Contenido: {publicacion.contenido}</p>
             <p>Publicado: {formatDistanceToNow(new Date(publicacion.fecha_publicacion), { addSuffix: true })}</p>
