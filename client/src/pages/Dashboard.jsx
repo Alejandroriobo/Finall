@@ -25,6 +25,7 @@ import Publicaciones from "../components/Publicaciones";
 
 const FormularioLogin = () => {
   const navigate = useNavigate();
+  const usuario = localStorage.getItem("username");
 
   const inicioSesion = async (e) => {
     // ... Your existing code for logging in ...
@@ -60,7 +61,7 @@ const FormularioLogin = () => {
               <img src={Mensajes} alt="mensajes" />
             </button>
             <button type="button">
-              <img src={Usuari} alt="usuario" />
+              <img className="mensa"src={Usuari} alt="usuario" />
             </button>
           </div>
         </nav>
@@ -72,9 +73,9 @@ const FormularioLogin = () => {
             <div className="profile-info">
               <h1>Feedback Zone</h1>
               <div className="azul">
-                <img src={User} alt="user" />
+                <img className="mensa" src={User} alt="user" />
               </div>
-              <h2>Miguel Roa</h2>
+              <h2>{usuario}</h2>
               <h4>Ingeniero de sistemas</h4>
               <h3>Semestre 6°</h3>
               <h4>Materias:</h4>

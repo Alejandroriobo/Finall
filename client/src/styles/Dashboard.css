@@ -198,5 +198,8 @@ footer {
   width: 70%;
 }
 .todo{
-  margin-top: -300px;
+  margin-top: 300px;
+}
+.mensa{
+  border-radius: 50%;
 }

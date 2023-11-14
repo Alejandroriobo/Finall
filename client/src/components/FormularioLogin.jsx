@@ -60,7 +60,7 @@ const FormularioLogin = () => {
               <input
                 className="inputs"
                 type="text"
-                placeholder="Email or phone"
+                placeholder="Username"
                 onChange={(e) => {
                   setUsuario(e.target.value);
                 }}
