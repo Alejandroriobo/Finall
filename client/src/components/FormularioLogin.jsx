@@ -24,7 +24,7 @@ const FormularioLogin = () => {
 
     // Consumo de Servicio Login
     await axios
-      .post("http://89.116.25.43:3500/api/login"/*"http://localhost:3001/api/login"*/, data)
+      .post(/*"http://89.116.25.43:3500/api/login"*/"http://localhost:3001/api/login"*/, data)
       .then((resp) => {
         console.log(resp);
         localStorage.setItem("token", resp.data.jwt);
